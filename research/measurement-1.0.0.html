@@ -1,11 +1,11 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — YEOEUM</title><meta name="description" content="강민구(Mingkoo)의 YEOEUM 측정 연구. 스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정의 설계 과정과 검증 결과."><link rel="canonical" href="https://yeoeum.anotier.art/research/measurement-1.0.0.html"><meta property="og:type" content="article"><meta property="og:title" content="스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — YEOEUM"><meta property="og:url" content="https://yeoeum.anotier.art/research/measurement-1.0.0.html"><meta name="author" content="강민구(Mingkoo)"><link rel="stylesheet" href="../styles.css?v=20261104-research"><link rel="stylesheet" href="research.css?v=1"><link rel="stylesheet" href="math/katex.min.css"></head><body><a class="skip" href="#main">본문으로</a><header><a class="brand" href="../index.html" aria-label="YEOEUM 홈"><img src="../assets/wordmark.png" alt="YEOEUM" width="150" height="50"></a><div class="header-nav"><nav aria-label="주 메뉴"><a href="../support.html">사용법</a><a href="index.html" aria-current="page">연구</a><a href="../licenses.html">라이센스</a></nav><nav class="languages" aria-label="Language"><a href="index.html" lang="ko" aria-current="page">한국어</a><a href="index.en.html" lang="en">English</a></nav></div></header><main id="main" class="report"><p class="breadcrumb"><a href="index.html">연구</a> / <a href="measurement-1.0.0.html">측정 연구 · 1.0.0</a></p><article><h1 id="스마트폰과-세-번의-박수를-이용한-공간-감쇠-추정">스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정</h1>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — YEOEUM</title><meta name="description" content="강민구(Mingkoo)의 YEOEUM 측정 연구. 스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정의 설계 과정과 검증 결과."><link rel="canonical" href="https://yeoeum.anotier.art/research/measurement-1.0.0.html"><meta property="og:type" content="article"><meta property="og:title" content="스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — YEOEUM"><meta property="og:url" content="https://yeoeum.anotier.art/research/measurement-1.0.0.html"><meta name="author" content="강민구(Mingkoo)"><link rel="stylesheet" href="../styles.css?v=20261104-research"><link rel="stylesheet" href="research.css?v=1"><link rel="stylesheet" href="math/katex.min.css"></head><body><a class="skip" href="#main">본문으로</a><header><a class="brand" href="../index.html" aria-label="YEOEUM 홈"><img src="../assets/wordmark.png" alt="YEOEUM" width="150" height="50"></a><div class="header-nav"><nav aria-label="주 메뉴"><a href="../support.html">사용법</a><a href="index.html" aria-current="page">연구</a><a href="../licenses.html">라이센스</a></nav><nav class="languages" aria-label="Language"><a href="index.html" lang="ko" aria-current="page">한국어</a><a href="index.en.html" lang="en">English</a></nav></div></header><main id="main" class="report"><p class="breadcrumb"><a href="index.html">연구</a> / <a href="measurement-1.0.0.html">측정 연구 · v 1.0.0</a></p><article><h1 id="스마트폰과-세-번의-박수를-이용한-공간-감쇠-추정">스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정</h1>
 <p>YEOEUM의 설계 과정과 검증 결과</p>
 <p>기술 연구 보고서 · 작성 강민구(Mingkoo) · 2026년 11월<br>
-대상 제품 YEOEUM 1.0.0 · 문서판 1.0</p>
+대상 제품 YEOEUM v 1.0.0 · 문서판 1.0</p>
 <details class="report-toc"><summary>목차</summary><nav aria-label="보고서 목차"><ol role="list" style="list-style:none;padding-left:0"><li><a href="#1-무엇을-하려고-했는가">1. 무엇을 하려고 했는가</a></li><li><a href="#2-어떤-문제를-고려했고-무엇을-선택했는가">2. 어떤 문제를 고려했고 무엇을 선택했는가</a></li><li><a href="#3-어디에-한계가-있는가">3. 어디에 한계가 있는가</a></li><li><a href="#4-그럼에도-무엇을-확인했는가">4. 그럼에도 무엇을 확인했는가</a></li><li><a href="#5-어떻게-활용하는-것이-적절한가">5. 어떻게 활용하는 것이 적절한가</a></li></ol></nav></details><h2 id="초록">초록</h2>
-<p>YEOEUM은 별도의 음향 장비 없이 스마트폰의 내장 마이크와 세 번의 박수로 공간의 중역 감쇠를 확인하는 도구다. 500 Hz·1 kHz·2 kHz에서 추정한 감쇠 시간을 하나의 대표값으로 요약하고, 대역별 결과와 측정 근거를 함께 기록한다. 본 보고서는 2026년 10월의 초기 기획부터 1.0.0 측정 방식 확정까지, 간단한 사용 절차 안에서 유효한 감쇠 정보를 얻기 위해 수행한 설계와 검증을 정리한다.</p>
+<p>YEOEUM은 별도의 음향 장비 없이 스마트폰의 내장 마이크와 세 번의 박수로 공간의 중역 감쇠를 확인하는 도구다. 500 Hz·1 kHz·2 kHz에서 추정한 감쇠 시간을 하나의 대표값으로 요약하고, 대역별 결과와 측정 근거를 함께 기록한다. 본 보고서는 2026년 10월의 초기 기획부터 v 1.0.0 측정 방식 확정까지, 간단한 사용 절차 안에서 유효한 감쇠 정보를 얻기 위해 수행한 설계와 검증을 정리한다.</p>
 <p>초기에는 내장 스피커를 이용한 자동 스윕 측정을 검토했다. 이후 실제 녹음에서 확인한 초기 에너지와 후기 감쇠의 차이, 배경소음, 분석 구간의 민감성을 바탕으로 박수 입력과 지수 전력 감쇠 모형을 선택했다. 각 박수의 감쇠를 따로 추정한 뒤 대역별 중앙값을 집계하고, 신호가 부족한 대역과 반복 근거를 구분하는 절차를 구성했다.</p>
-<p>최종 방식은 두 실측 장소에서 각각 다섯 회와 여섯 회 반복했을 때 대표값의 측정 간 변동계수(CV) 2.51%와 1.69%를 보였다. 정답이 주어진 단일 감쇠 합성 검사에서는 345조건 중 321조건에서 대표값을 제공했고, 제공값의 평균 절대 상대오차는 2.60%였다. 실제 참조와의 대역별 차이, 배경소음에 따른 변동과 미산출 조건도 함께 확인했다. 이러한 결과를 바탕으로 스마트폰을 이용한 현장 예비 확인의 가능성과 적용 범위를 제시한다.</p>
+<p>최종 방식은 감쇠가 다른 두 실측 장소에서 평균 0.217초와 0.576초를 산출해, 별도 REW T20 참조와 같은 방향으로 장소 사이의 차이를 포착했다. 각각 다섯 회와 여섯 회 반복했을 때 대표값의 측정 간 변동계수(CV)는 2.51%와 1.69%였다. 단일 감쇠 합성 검사에서는 345조건 중 321조건에서 대표값을 제공했고, 제공값의 평균 절대 상대오차는 2.60%였다. 배경소음 실험에서는 사전 잡음 정보를 이용한 분석의 일부 변동 감소를 확인했다. 이 결과는 간단한 입력 절차, 검증 조건에서의 반복 일관성, 분석 근거의 보존을 갖춘 현장 도구로서 YEOEUM v 1.0.0의 사용 근거를 제공한다. 적용 목적은 중역 감쇠의 예비 확인과 유사한 조건에서의 반복 비교이며, 참조 차이와 미산출 조건을 포함한 세부 결과를 함께 제시한다.</p>
 <p>주요어: 스마트폰 측정, 공간음향, 잔향시간, 박수 가진, 감쇠 추정, 배경소음, 반복성</p>
 <h2 id="표기와-읽는-기준">표기와 읽는 기준</h2>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
@@ -48,7 +48,8 @@
 <p>여음의 출발점은 현장에서 들리는 잔향을 스마트폰만으로 확인할 수 있게 하는 것이었다. 별도의 스피커·측정 마이크·인터페이스·컴퓨터를 연결하거나 삼각대를 설치하지 않고, 손에 든 기기에서 측정을 시작해 결과를 읽는 절차를 목표로 했다. 사용자가 장비를 준비하는 부담을 줄이되, 공간마다 소리가 얼마나 오래 남는지 판단할 근거를 얻고자 했다.</p>
 <p>처음부터 세 번의 박수를 전제로 기획한 것은 아니다. 초기 구상은 휴대전화가 알고 있는 시험음을 내장 스피커로 재생하고, 동시에 녹음한 뒤, 두 신호를 비교해 공간 응답을 얻는 자동 측정이었다. 박수는 자동 측정에서 유효한 신호를 확보하지 못할 때 검토할 보조 입력이었다. 짧은 조작으로 대표값 하나를 제공하고, 필요한 사람에게만 대역별 결과와 분석 근거를 보여주는 화면 구조도 이때 정했다.</p>
 <p>개발은 먼저 측정 숫자보다 녹음 자체를 확인하는 단계에서 시작했다. 시험음이 의도대로 재생됐는지, 녹음이 중간에 끊기지 않았는지, 감쇠 구간이 보존됐는지, 저장한 응답을 같은 계산으로 재현할 수 있는지 조사했다. 이 단계에서 ‘계산한 파일이 올바르다’와 ‘그 파일에 유효한 공간 감쇠가 들어 있다’가 서로 다른 문제라는 점이 드러났다.</p>
-<p>이후의 방향 전환은 조작을 더 복잡하게 만들기보다, 주어진 휴대전화 입력에서 얻을 수 있는 정보를 다시 정하는 과정이었다. 최종 입력은 스마트폰 내장 마이크와 세 번의 박수로 바뀌었지만, 외부 장비를 필수로 요구하지 않고 현장에서 대략적인 감쇠를 확인한다는 목표는 유지했다.</p>
+<p>이후의 설계는 외부 장비 없이 유효한 감쇠 정보를 확보하는 데 집중했다. 음원과 수음기를 분리할 수 있는 박수를 선택하고, 감쇠와 배경소음을 함께 다루는 분석 및 반복 집계를 구성했다. 스마트폰 내장 마이크와 세 번의 박수라는 최종 절차는 이 목표에 맞춰 확정했다.</p>
+<p>v 1.0.0의 목표와 달성 결과는 사용 절차와 결과의 활용에 따라 세 가지로 정리할 수 있다. 첫째, 외부 장비 없이 세 번의 박수로 중역 감쇠와 대역별 결과를 얻는다. 둘째, 감쇠가 다른 장소의 차이를 포착하고 같은 조건의 반복값이 얼마나 일관되는지 확인한다. 셋째, 결과를 다시 검토할 수 있도록 원본과 분석 근거를 연결한다. 실기기·참조·합성 신호 검사는 이 기준의 서로 다른 측면을 검증한다.</p>
 <h3 id="12-측정할-양의-정의">1.2 측정할 양의 정의</h3>
 <p>최종 제품은 세 대역 각각에서 지수 전력 모형의 60 dB 감쇠 상당 시간을 추정한다. 각 대역은 유효한 박수별 추정값의 중앙값이며, 대표값은 다음과 같다.</p>
 <div class="equation"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mrow><mi mathvariant="normal">Y</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">U</mi><mi mathvariant="normal">M</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mover accent="true"><mi>T</mi><mo stretchy="true">~</mo></mover><mn>500</mn></msub><mo>+</mo><msub><mover accent="true"><mi>T</mi><mo stretchy="true">~</mo></mover><mn>1000</mn></msub><mo>+</mo><msub><mover accent="true"><mi>T</mi><mo stretchy="true">~</mo></mover><mn>2000</mn></msub></mrow><mn>3</mn></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">T_{\mathrm{YEOEUM}}=\frac{\widetilde T_{500}+\widetilde T_{1000}+\widetilde T_{2000}}{3}.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">YEOEUM</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.3063em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6203em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9433em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span><span class="svg-align" style="width:calc(100% - 0.1667em);margin-left:0.1667em;top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.26em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.26em" viewBox="0 0 600 260" preserveAspectRatio="none"><path d="M200 55.538c-77 0-168 73.953-177 73.953-3 0-7
@@ -105,19 +106,19 @@
 <td>짧은 기본창·반복 근거·사전 잡음 분포를 결합한 현행 방식으로 정리했다.</td>
 </tr>
 <tr>
-<td>1.0.0 확정</td>
+<td>v 1.0.0 확정</td>
 <td>추가 복잡성이 실제로 더 나은 결과를 만드는가?</td>
 <td>대역 가중·초기 구간·두 성분·교차 예측까지 비교한 뒤 v4와 3대역 동일 평균을 유지했다.</td>
 </tr>
 </tbody>
 </table></div>
-<p>각 단계에서 입력·분석량·실패 조건을 나눠 확인했고, 기존 가정이 맞지 않을 때 방법 자체를 바꿨다. 과거 결과는 당시의 정의와 버전으로 보존했다.</p>
+<p>각 단계의 비교를 통해 주 입력, 추정량, 값 제공 조건과 반복 집계를 구체화했다. 최종 방식은 짧은 기본 관측창으로 반복성을 확보하고, 조건부 확장으로 긴 감쇠에 대응하며, 박수 전 잡음 정보를 사용해 일부 환경 변동을 줄이는 구성이다. 과거 결과는 당시의 정의와 버전으로 보존해 이러한 선택의 근거를 추적할 수 있게 했다.</p>
 <h2 id="2-어떤-문제를-고려했고-무엇을-선택했는가">2. 어떤 문제를 고려했고 무엇을 선택했는가</h2>
 <h3 id="21-내장-스피커-스윕에서-박수로">2.1 내장 스피커 스윕에서 박수로</h3>
 <p>초기에는 입력 신호를 아는 지수 사인 스윕을 스마트폰 내장 스피커로 재생하고 내장 마이크로 녹음했다. 스윕은 낮은 주파수부터 높은 주파수까지 순서대로 지나가는 시험음이다. 입력 파형을 알고 있으므로 녹음과의 관계를 역산해 응답을 얻을 수 있다는 장점이 있었다. 여기서 응답에는 공간뿐 아니라 음원·수음 장치와 처리 경로의 영향도 포함된다. 수치 역산과 파일 내보내기의 재현성은 확인했지만, 수학적으로 역산이 맞는 것과 공간의 유효한 감쇠가 확보되는 것은 별개였다.</p>
 <p>실제 녹음에는 매우 강한 초기 성분과 약한 후기 성분이 나타났고, 오디오 모드에 따라 녹음 레벨과 시간적 포락선도 달랐다. 레벨 사전 점검으로 주 스윕의 큰 입력을 피한 사례에서도 유효한 감쇠 구간은 확보되지 않았다. 넓은 대역의 긴 꼬리처럼 보였던 부분이 실제 가진 범위 밖의 저주파 성분에 지배된 사례도 있었다.</p>
 <figure><a href="figures/prototype-response.png" target="_blank" rel="noopener" aria-label="초기 자동 스윕에서 얻은 응답 — 원본 크기로 보기"><img src="figures/prototype-response.png" alt="초기 자동 스윕에서 얻은 응답" loading="lazy" decoding="async"></a><figcaption>그림 1. 초기 자동 스윕으로 얻은 실제 응답. 위는 저장 피크 주변의 상대 진폭, 아래는 같은 응답의 시간·주파수 분포다. 색은 STFT 최대 전력 대비 상대값이며, 점선은 시험음의 시작 주파수 250Hz 다. 후기 저역 에너지가 두드러져, 파형이 길게 남는 것만으로 분석에 쓸 공간 감쇠가 확보됐다고 판단하기 어려웠다.</figcaption></figure>
-<p>이에 음원과 수음기를 물리적으로 분리할 수 있는 박수를 주 입력으로 선택했다. 이는 휴대전화 스윕 방식이 원리상 불가능하다는 결론이 아니다. 검토한 구성에서 최종 제품에 필요한 근거를 충분히 얻지 못했다는 선택이다. 박수 역시 파형·지향성·대역 에너지가 알려진 시험 신호는 아니므로, 녹음을 완전한 공간 임펄스 응답으로 간주하지 않는다.</p>
+<p>이에 음원과 수음기를 물리적으로 분리하면서 외부 장비도 요구하지 않는 박수를 주 입력으로 선택했다. 이 선택으로 사용 절차를 간단하게 유지하며 박수 뒤의 감쇠를 관측하는 구성을 확보했다. 입력마다 달라지는 파형과 대역 에너지는 세 번의 관측, 대역별 적격성 검사와 반복 집계로 다룬다. 박수 녹음과 완전한 공간 임펄스 응답의 차이는 3.1절에 설명한다.</p>
 <p>휴대전화와 박수를 이용한 중역 잔향 측정은 선행 연구에서도 다뤄졌다. Martin 등의 연구는 여러 박수와 내장 마이크를 사용하고 유효 범위와 기준 비교를 검토했다. 본 연구는 이 접근을 참고했지만 박수 횟수, 필터, 구간 선택과 추정식이 달라 해당 연구의 성능을 승계하지 않는다. <a href="https://www.atelier7hz.com/wp/ACOUSTIC%20DECISION%20SUPPORT%20SMARTPHONE%20APPLICATION%20FOR%20BUILDING%20STAKEHOLDERS.pdf">Martin·Duée·Blais, ICSV26, 2019</a>.</p>
 <h3 id="22-입력-검출과-감쇠-추정을-분리한다">2.2 입력 검출과 감쇠 추정을 분리한다</h3>
 <p>저장 자료에서 두 가지 검출 문제가 재현됐다. 준비 구간의 단발 소리가 이후 문턱을 지나치게 높였고, 작은 선행음 때문에 큰 박수가 검증창 밖이나 끝에 놓여 뒤의 작은 사건을 선택하기도 했다. 단일 최대 표본 대신 10 ms 블록 피크의 95백분위를 준비 기준에 사용하고, 후보 확인 구간을 120 ms로 늘리는 변경은 해당 사례를 대상으로 검증한 뒤 반영했다.</p>
@@ -195,25 +196,33 @@
 <p>확장 경로의 값은 다른 박수의 같은 대역 추정과 큰값/작은값 비가 1.5 이내일 때만 집계에 기여한다. 짧은 경로의 단일 박수 참고 정책은 유지한다. 이 구조로 앞선 현장 회귀와 감소 배경 대조를 제한하면서 긴 합성 신호에 대한 대응을 남겼다.</p>
 <h3 id="27-박수-전-잡음-분포를-사용한-v4">2.7 박수 전 잡음 분포를 사용한 v4</h3>
 <p>v4는 기존 적격성을 유지하면서 잡음 바닥의 선택을 제한적으로 수정한다. 박수 전 20 ms 전력 블록이 여덟 개 이상이면 10·90백분위 범위를 구한다. 기존 짧은 구간 적합에 값이 있을 때 이 범위를 이용해 N의 허용 범위를 제한한 후보를 다시 계산한다. 후보가 기존 적격 조건을 만족하고 기존 T와의 큰값/작은값 비가 1.25 이내일 때 채택한다.</p>
-<p>기존 미산출을 이 단계에서 새로 복구하거나 긴 경로를 교체하지 않는다. 배경 전력을 단순히 빼거나 RT에서 일정 시간을 빼는 보정도 아니다. 사전 잡음 분포가 이후 잡음을 완전히 설명한다는 보장은 없으며, 그 불일치가 남는 한계다.</p>
+<p>이 변경은 기존 유효 결과의 잡음 추정을 개선하는 데 범위를 뒀다. 기존 미산출을 새로 복구하거나 긴 경로를 교체하지 않고, 배경 전력을 단순 차감하거나 RT에서 일정 시간을 빼는 보정도 적용하지 않는다. 이 설계는 기존 값 제공 조건을 유지하며 사전 잡음 정보를 활용하기 위한 것이다. 실제 배경소음 실험에서의 개선 효과는 4.2절에 제시한다.</p>
 <h3 id="28-세-박수의-대역별-중앙값과-동일-평균">2.8 세 박수의 대역별 중앙값과 동일 평균</h3>
 <p>세 박수에 공통 T를 직접 적합하는 방식도 시험했다. 당시 현장 자료의 수치 제공은 늘었지만 특정 박수의 늦은 에너지와 배경 변화가 공통 기울기를 좌우했다. 반복 파워의 정규화·평균·중앙값, 박수별 추정 후 중앙값을 대조한 뒤 마지막 구성을 선택했다.</p>
 <p>각 대역에 기여하는 박수 집합은 달라도 된다. 한 대역에서 실패한 박수가 다른 대역의 유효 정보를 자동으로 없애지 않는다. 단일 박수 근거와 반복 근거는 구분하고, 높은 박수 간 CV는 주의 정보로 남긴다. CV만으로 값을 제거하거나 대역 비중을 바꾸지 않는다. 대역별 CV 20% 초과는 주의 사유이며 일괄 미제공 조건이 아니다.</p>
 <p>본문의 CV는 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi>s</mi><mi mathvariant="normal">/</mi><mover accent="true"><mi>T</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">100s/\bar T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.0701em;vertical-align:-0.25em;"></span><span class="mord">100</span><span class="mord mathnormal">s</span><span class="mord">/</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">ˉ</span></span></span></span></span></span></span></span></span></span>이며, s는 분모가 n−1인 표본 표준편차다. 대역 내부 CV의 표본은 기여 박수별 시간이고, 측정 간 CV의 표본은 완료된 시퀀스별 대표값이다. 기여가 하나이면 그 대역의 CV를 계산하지 않는다.</p>
+<h3 id="29-v-100의-구성-확정">2.9 v 1.0.0의 구성 확정</h3>
+<p>최종 구성은 대역별 정보를 유지하면서 반복 일관성과 값 제공 조건을 함께 확보하는 기준으로 선택했다. 500 Hz를 제외하거나 대역 비중을 바꾸는 후보는 일부 지표를 개선했지만 측정 대상이 달라지거나 기존 결과의 제공을 줄였다. 따라서 500 Hz·1 kHz·2 kHz의 대역별 중앙값과 동일 비중 평균을 유지했다.</p>
+<p>초기 구간의 재사용, 더 세밀한 시간 해상도, 두 감쇠 성분과 세 박수 교차 예측도 비교했다. 최종 두 장소의 비교에서 기본 구간은 검토한 초기 구간 선택 방식보다 작은 측정 간 CV를 보였다. v 1.0.0은 이 반복 일관성과 기존 적격 조건을 유지하는 구성을 채택했다. 후보별 이득과 판단, 구간 선택의 수치·그래프는 <a href="measurement-1.0.0-appendix.html#a4-v-100-%ED%99%95%EC%A0%95-%EC%A0%84-%EB%AF%B8%EC%B1%84%ED%83%9D-%EC%97%B0%EA%B5%AC">부록 A.4</a>와 <a href="measurement-1.0.0-appendix.html#a8-%EC%B5%9C%EC%A2%85-%EA%B5%AC%EA%B0%84-%EC%84%A0%ED%83%9D%EA%B3%BC-%ED%9B%84%EB%B3%B4-%EB%B9%84%EA%B5%90%EC%9D%98-%EC%83%81%EC%84%B8-%EA%B2%B0%EA%B3%BC">A.8</a>에 제시한다.</p>
 <h2 id="3-어디에-한계가-있는가">3. 어디에 한계가 있는가</h2>
-<h3 id="31-입력과-측정량의-한계">3.1 입력과 측정량의 한계</h3>
+<p>v 1.0.0은 외부 장비 없는 현장 예비 확인을 목적으로 측정 대역과 절차를 정했다. 이 제품 범위와 실험에서 관찰한 제약, 아직 검증하지 않은 조건을 구별해 적용 범위를 설명한다.</p>
+<h3 id="31-측정-대상과-입력의-범위">3.1 측정 대상과 입력의 범위</h3>
+<p>대표값은 500 Hz·1 kHz·2 kHz의 중역 감쇠를 요약한다. 이 범위는 간단한 절차로 현장에서 감쇠를 확인하기 위한 제품 정의이며, 전체 가청 대역의 음색·명료도·음향 품질 평가와 구별한다. 규격 적합 판정이나 시공 검수에는 해당 목적에 맞는 기준 측정이 필요하다.</p>
 <p>박수에는 미지의 시간 파형과 지향성이 있고, 내장 마이크의 응답과 기기 처리가 수음에 관여한다. 손에 든 자세, 몸과의 거리, 휴대전화 방향, 음원·수신 위치도 바뀔 수 있다. 단일 위치의 세 박수로 공간 전체의 감쇠 분포를 대표한다고 가정하지 않는다.</p>
 <p>단일 지수 모형은 초기·후기 감소 속도가 다른 신호를 압축한다. 짧은 관측창과 긴 관측창이 다른 값을 낸다고 해서 어느 한쪽을 자동으로 참값으로 고를 수 없다. 높은 적합도 역시 그 감쇠가 공간에서 발생했다는 증거는 아니다. 소스 자체의 지수 감쇠도 수학적으로 같은 모형을 만족할 수 있다.</p>
 <h3 id="32-참조-측정도-조건을-갖는다">3.2 참조 측정도 조건을 갖는다</h3>
 <p>과거 UMIK-1과 스피커를 사용한 장소 F·G 비교, 같은 REW IR을 두 분석기에 넣은 비교, 같은 박수를 iPhone과 UMIK→AAC로 동시에 기록한 비교를 나눠 검토했다. 같은 IR에서 계산 차이가 작아져도 실측 입력 차이는 남았으며, 같은 박수가 외부 마이크에서도 짧게 분석된 사례가 있어 차이를 iPhone 처리 하나에 귀속하지 못했다. AAC 동시 녹음에는 압축 경로라는 제한도 있었다.</p>
-<p>최근 REW 비교는 MacBook Air 스피커와 원격 iPhone 마이크를 사용했다. 이 경로는 교정된 측정 마이크 기반의 독립 기준과 다르다. 같은 휴대전화를 사용해도 원격 입력과 앱의 녹음 세션이 같은 마이크 배열·처리를 사용한다고 확인하지 않았다. 명목 대역폭을 맞춰도 필터와 추정량이 다르므로 본문의 차이는 ‘해당 REW T20 대비 관측 차이’다.</p>
+<p>최근 REW 비교는 MacBook Air 스피커와 원격 iPhone 마이크를 사용했다. 이 경로는 교정된 측정 마이크 기반의 독립 기준과 다르다. 같은 휴대전화를 사용해도 원격 입력과 앱의 녹음 세션이 같은 마이크 배열·처리를 사용한다고 확인하지 않았다. 명목 대역폭을 맞춰도 필터와 추정량이 다르므로 본문의 차이는 ‘해당 REW T20 대비 관측 차이’다. 장소 A의 참조 적합 일부가 약했고, 장소 B의 500 Hz REW 반복 CV는 12.47%였다. 참조 비교는 장소 사이의 감쇠 차이와 대역별 경향을 대조하는 근거로 사용하며, 특정 기기의 보편적인 오차율이나 고정 보정량을 정하는 근거로 확대하지 않는다.</p>
 <h3 id="33-검증-자료의-범위">3.3 검증 자료의 범위</h3>
 <p>같은 녹음을 여러 방법으로 재분석한 결과와 새로 측정한 결과는 구분했다. 합성 신호의 조건·난수 시드는 실제 공간의 측정 횟수로 합산하지 않았으며, 같은 스마트폰 기록을 공유하는 보조 참조도 독립 표본으로 중복 계산하지 않았다. 수치 제공 비율은 각 평가 집합 안에서 계산했고, 실제 사용 환경 전체의 성공률로 일반화하지 않는다.</p>
+<p>가장 마지막 검토의 실녹음 보관 집합에서는 대표값이 65/69였다. 이 분모에는 과거 재분석과 연구용 묶음도 포함되므로, 새 기기 실험 69회나 출시 후 성공률 94.2%를 뜻하지 않는다.</p>
 <p>여러 후보를 같은 보관 자료에서 비교했으므로 자료 분할과 규칙 고정만으로 모든 탐색 편향이 사라지지는 않는다. 과거에 본 평가 자료를 완전한 미사용 맹검으로 부르지 않는다. 작은 반복 수에서 얻은 CV는 정밀한 모집단 추정이나 신뢰구간도 아니다.</p>
+<p>별도 장소 C의 두 기록은 약 31분 간격으로 1.070초와 1.102초, 평균 1.086초·CV 2.14%였다. 장소 D는 7기록 중 6개 대표값, 평균 0.699초·CV 14.33%로 더 넓게 퍼졌다. 후자는 500 Hz 근거 부족과 일부 높은 박수 간 편차를 포함한다. 위치·방향 통제가 확인되지 않아 엄밀한 반복정밀도로 일반화하지 않는다.</p>
 <h3 id="34-평균이-숨기는-대역-차이">3.4 평균이 숨기는 대역 차이</h3>
 <p>대표값이 가까워도 한 대역의 과소 추정과 다른 대역의 과대 추정이 상쇄될 수 있다. 대표값 CV가 작아도 각 대역의 변동이 반대 방향이면 안정적으로 보일 수 있다. 따라서 실제 참조 비교는 대역별 값과 대표값을 함께 보며, 박수 간 편차와 완료된 측정 간 편차도 구분한다.</p>
 <h2 id="4-그럼에도-무엇을-확인했는가">4. 그럼에도 무엇을 확인했는가</h2>
-<h3 id="41-최종-엔진의-실제-기기-비교">4.1 최종 엔진의 실제 기기 비교</h3>
+<p>이번 검증은 스마트폰과 세 번의 박수라는 절차가 실제로 어떤 정보를 제공하는지 확인하는 데 초점을 뒀다. 실기기에서는 장소 사이의 감쇠 차이와 반복 일관성을, 배경소음 실험에서는 분석 개선의 효과를, 합성 신호에서는 알려진 감쇠의 수치 회복을 각각 확인했다.</p>
+<h3 id="41-감쇠가-다른-두-장소의-구분과-반복-일관성">4.1 감쇠가 다른 두 장소의 구분과 반복 일관성</h3>
 <p>실제 기기 검증은 iPhone 16 Pro에서 수행했다. 장소 A의 여음 5시퀀스와 장소 B의 6시퀀스는 최종 전력 모형(v4)을 사용한 기록이다. 각 시퀀스는 세 번의 박수로 구성된다. 저장 결과를 같은 계산으로 재현한 뒤, 같은 장소에서 별도로 얻은 REW T20과 대조했다. 장소 기호는 이 문서 안에서 일관되게 사용한다.</p>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
 <thead>
@@ -251,7 +260,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>이 표가 묻는 것은 두 가지다. 여음이 같은 조건에서 얼마나 비슷하게 반복되는가, 그리고 그 값이 참조와 얼마나 다른가다. 장소 A는 잘 반복되지만 참조 대비 차이가 더 크고, 장소 B는 반복성과 참조 차이가 모두 상대적으로 작다. 작은 CV와 작은 참조 차이는 같은 성과가 아니다.</p>
+<p>여음은 장소 A에서 평균 0.217초, 장소 B에서 0.576초를 산출했다. 별도 REW T20도 A보다 B에서 긴 감쇠를 보여, 두 장소의 감쇠 차이를 같은 방향으로 포착했다. 각 장소의 반복 측정에서 CV는 2.51%와 1.69%로, 장소 사이의 차이를 확인하는 동안 같은 조건의 결과는 서로 가깝게 모였다. 이 두 관측은 간단한 현장 절차로 감쇠가 다른 장소를 구분하고 결과를 반복 확인할 수 있다는 근거다.</p>
 <p>대표값 안의 대역 구성을 함께 보면 결과를 더 정확하게 읽을 수 있다.</p>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
 <thead>
@@ -288,19 +297,15 @@
 </tbody>
 </table></div>
 <figure><a href="figures/reference-bands.png" target="_blank" rel="noopener" aria-label="대역별 참조와 여음 평균 — 원본 크기로 보기"><img src="figures/reference-bands.png" alt="대역별 참조와 여음 평균" loading="lazy" decoding="async"></a><figcaption>그림 5. 장소 A·B 의 대역별 평균. 여음은 각 시퀀스의 대역 중앙값을 시퀀스 사이에서 평균했다. A 는 REW2 회·여음 5 회, B 는 REW3 회·여음 6 회다. 선은 세 대역 사이를 연결한 안내선이며 연속 주파수 응답이나 신뢰구간을 뜻하지 않는다.</figcaption></figure>
-<p>대표값의 차이를 시간으로 보면 장소 A는 약 30 ms, 장소 B는 약 33 ms다. 상대 차이는 각각 15.87%와 6.04%로, 감쇠 시간이 짧은 조건에서는 같은 정도의 시간 차이도 더 큰 비율이 된다. 따라서 시간 차이와 상대 차이를 함께 보고, 두 값의 차이를 특정 기기의 보편적인 오차율로 읽지 않는다.</p>
-<p>장소 A에서는 특히 2 kHz 차이가 크고, 장소 B에서는 500 Hz보다 1 kHz 차이가 크다. 특정 대역을 일괄 제외하거나 대표값 하나에 고정 보정을 적용하면 이 차이를 설명할 수 없다. 약 +0.03초라는 대표값 차이가 두 장소에서 관찰돼도 보편적인 가산 편향으로 판단하지 않는다.</p>
-<p>참조 측정에는 MacBook Air 스피커와 원격 iPhone 마이크를 사용했다. 앱과 참조의 가진·수음 경로·필터·추정량은 완전히 같지 않다. 장소 A의 참조 적합 일부가 약했고, 장소 B의 500 Hz REW 반복 CV도 12.47%였다. 따라서 표는 교정된 절대 참값에 대한 확정 오차가 아니라 해당 참조에 대한 관측 차이다. 연결 조건을 바꾼 추가 비교와 미채택 참조는 부록 A에 남긴다.</p>
-<h3 id="42-반복성과-배경소음-환경-변인">4.2 반복성과 배경소음 환경 변인</h3>
-<p>별도 장소 C의 두 기록은 약 31분 간격으로 1.070초와 1.102초, 평균 1.086초·CV 2.14%였다. 장소 D는 7기록 중 6개 대표값, 평균 0.699초·CV 14.33%로 더 넓게 퍼졌다. 후자는 500 Hz 근거 부족과 일부 높은 박수 간 편차를 포함한다. 위치·방향 통제가 확인되지 않아 엄밀한 반복정밀도로 일반화하지 않는다.</p>
+<p>REW 참조 평균과의 차이는 장소 A에서 약 30 ms, 장소 B에서 약 33 ms였다. 상대 차이 15.87%와 6.04%도 함께 제시해 감쇠 길이에 따른 비율 차이를 읽을 수 있게 했다. 모든 비교 대역에서 B의 평균이 A보다 길었으며, 대역별 수치는 두 장소의 서로 다른 감쇠 구성을 보여준다. A의 2 kHz처럼 참조 차이가 큰 대역도 원래 값대로 제시했다. 참조의 조건과 해석 범위는 3.2절, 추가 비교는 부록 A에 정리했다.</p>
+<h3 id="42-배경소음-조건에서-확인한-분석-개선">4.2 배경소음 조건에서 확인한 분석 개선</h3>
 <p>배경소음의 영향은 같은 위치에서 재생음을 추가하거나 멈추는 방식으로 환경 변인을 조정해 별도로 조사했다. 추가 배경소음이 있는 조건과 없는 조건에서 각각 세 시퀀스를 녹음했다. 여기서 ‘없음’은 원래 주변 소음까지 없앤 무소음 상태가 아니라, 실험자가 추가한 재생음을 제거한 조건이다. 사용한 음원은 정상 백색잡음처럼 교정된 시험 잡음이 아니며, 일정한 대역별 소음 수준을 보장하지 않는다.</p>
 <figure><a href="figures/background-spectrograms.png" target="_blank" rel="noopener" aria-label="배경소음 환경 변인의 실제 녹음 — 원본 크기로 보기"><img src="figures/background-spectrograms.png" alt="배경소음 환경 변인의 실제 녹음" loading="lazy" decoding="async"></a><figcaption>그림 6. 추가 배경소음을 제거한 조건과 재생한 조건의 실제 녹음 예시. 시간·주파수·색상 눈금을 같게 유지하고, 두 녹음을 각각 정규화하지 않았다. 색은 두 그림에 공통인 STFT 최대 전력 대비 값이다. 시간 0 은 검출한 박수 피크이며, 전후의 에너지 분포에서 수음 환경의 차이를 확인할 수 있다.</figcaption></figure>
-<p>이 실험에서는 공간 자체를 바꾸지 않고 수음 환경을 바꿨을 때 추정치가 얼마나 이동하는지 본다. v4 보관 원본 재분석에서 추가 소음 조건의 CV는 v3의 7.72%에서 5.78%로 줄고, 추가 소음이 없는 조건은 약 4.29%로 유지됐다. 두 조건 평균의 차이는 −14.57%에서 −13.13%로 줄었지만 남아 있었다.</p>
+<p>이 실험에서는 공간 자체를 바꾸지 않고 수음 환경을 바꿨을 때 추정치가 얼마나 이동하는지 본다. v4 보관 원본 재분석에서 추가 소음 조건의 CV는 v3의 7.72%에서 5.78%로 줄고, 추가 소음이 없는 조건은 약 4.29%로 유지됐다. 두 조건 평균의 차이는 −14.57%에서 −13.13%로 줄었다. 동일한 여섯 원본에서 추가 소음이 있는 조건의 흩어짐을 줄이고, 추가 소음이 없는 조건의 반복성을 유지한 것이 이 변경에서 확인한 성과다.</p>
 <figure><a href="figures/background-comparison.png" target="_blank" rel="noopener" aria-label="추가 배경소음 유무와 추정값 변화 — 원본 크기로 보기"><img src="figures/background-comparison.png" alt="추가 배경소음 유무와 추정값 변화" loading="lazy" decoding="async"></a><figcaption>그림 7. 같은 여섯 시퀀스의 v3·v4 재분석. 조건당 3 개 시퀀스를 모두 표시했으며 작은 점은 시퀀스별 대표값, 큰 마름모는 조건 평균이다. 선은 같은 원본의 두 분석 결과를 연결한다. 조건 내부의 흩어짐과 조건 평균 사이의 이동을 구분해 읽는다.</figcaption></figure>
-<p>이를 소음에 의한 영향이 제거됐다는 결과로 해석하지 않는다. 같은 공간에서도 배경과 감쇠를 분리하기 어려운 조건이 있고, 사전 잡음 분포를 사용한 v4는 그 영향 중 일부를 줄였다는 결과다. 동일한 디지털 녹음에 보관 배경음을 더한 별도 대조도 수행했지만, 이는 실제 공간에서 재생음을 켜고 끈 실험과 다른 검사다. 둘을 같은 표본으로 합치지 않는다.</p>
-<p>가장 마지막 검토의 실녹음 보관 집합에서는 대표값이 65/69였다. 이 분모에는 과거 재분석과 연구용 묶음도 포함되므로, 새 기기 실험 69회나 출시 후 성공률 94.2%를 뜻하지 않는다.</p>
-<h3 id="43-합성-신호에서의-수치-회복과-실패">4.3 합성 신호에서의 수치 회복과 실패</h3>
-<p>여기서 합성 신호는 감쇠 시간을 미리 정해 만든 시험용 녹음이다. 정답을 알 수 있어 계산이 시간을 얼마나 잘 회복하는지 확인할 수 있지만, 실제 박수·기기·공간의 모든 특성을 재현하지는 않는다. 최종 v4를 기존 단일 감쇠 합성 자료에 적용한 결과다. 각 조건은 세 입력으로 구성하며, 시작점을 알려준 추정기 검사로서 검출·기기 경로를 포함하지 않는다. 평균 절대 상대오차는 대표값이 있는 집합 S에서 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi mathvariant="normal">∣</mi><mi>S</mi><msup><mi mathvariant="normal">∣</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msub><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>S</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mi>T</mi><mo stretchy="true">^</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>T</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi mathvariant="normal">/</mi><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">100|S|^{-1}\sum_{i\in S}|\widehat T_i-T_i|/T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2504em;vertical-align:-0.3271em;"></span><span class="mord">100∣</span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1786em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3271em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∣</span><span class="mord"><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9233em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span><span class="svg-align" style="width:calc(100% - 0.1667em);margin-left:0.1667em;top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.24em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.24em" viewBox="0 0 1062 239" preserveAspectRatio="none"><path d="M529 0h5l519 115c5 1 9 5 9 10 0 1-1 2-1 3l-4 22
+<p>박수 전 잡음 정보를 추정에 반영하는 설계는 이 실험에서 일부 소음 변동을 줄이는 효과를 보였다. 소음 조건 사이의 평균 이동 −13.13%는 남아 있으므로, 사용 시에는 가능한 한 배경을 조용하고 일정하게 유지한다. 동일한 디지털 녹음에 보관 배경음을 더한 별도 대조도 수행했으며, 이는 현장 재생 실험과 구별해 검토했다.</p>
+<h3 id="43-알려진-감쇠-시간의-수치-회복">4.3 알려진 감쇠 시간의 수치 회복</h3>
+<p>여기서 합성 신호는 감쇠 시간을 미리 정해 만든 시험용 녹음이다. 정답을 알 수 있으므로 입력 조건을 바꾸며 추정 계산이 감쇠 시간을 얼마나 잘 회복하는지 확인할 수 있다. 최종 v4를 기존 단일 감쇠 합성 자료에 적용한 결과다. 각 조건은 세 입력으로 구성하며, 시작점을 알려준 추정기 검사로서 검출·기기 경로를 포함하지 않는다. 평균 절대 상대오차는 대표값이 있는 집합 S에서 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi mathvariant="normal">∣</mi><mi>S</mi><msup><mi mathvariant="normal">∣</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msub><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>S</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mi>T</mi><mo stretchy="true">^</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>T</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi mathvariant="normal">/</mi><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">100|S|^{-1}\sum_{i\in S}|\widehat T_i-T_i|/T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2504em;vertical-align:-0.3271em;"></span><span class="mord">100∣</span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1786em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.0576em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3271em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∣</span><span class="mord"><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9233em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span><span class="svg-align" style="width:calc(100% - 0.1667em);margin-left:0.1667em;top:-3.6833em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.24em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.24em" viewBox="0 0 1062 239" preserveAspectRatio="none"><path d="M529 0h5l519 115c5 1 9 5 9 10 0 1-1 2-1 3l-4 22
 c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>로 계산한다. 각 합성 조건의 세 대역 목표가 같으므로 해당 T를 대표값의 목표로 사용한다. 개발·회귀 집합의 세부 생성 조건과 시드는 원자료에 보존한다.</p>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
 <thead>
@@ -345,109 +350,19 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 </table></div>
 <p>평균·중앙값·95백분위는 대표값이 제공된 조건에서 계산했다. 95백분위는 오차 분포의 상위 경계를 살펴보는 요약량이며 최대값이나 새 조건의 보장 한계는 아니다. 전체 345조건 중 24조건은 대표값이 없어 오차 요약에 포함하지 않았다. 전체 범위와 큰 오차 사례는 <a href="measurement-1.0.0-appendix.html#a7-%ED%95%A9%EC%84%B1-%EA%B2%80%EC%82%AC%EC%9D%98-%EC%A0%84%EC%B2%B4-%EC%98%A4%EC%B0%A8-%EB%B2%94%EC%9C%84%EC%99%80-%EA%B2%BD%EA%B3%84-%EC%82%AC%EB%A1%80">부록 A.7</a>에 정리했다.</p>
 <p>¹ 6초 묶음에는 전체 단일 감쇠 집합과 중복되는 조건이 있어 독립 표본으로 더하지 않는다.</p>
-<figure><a href="figures/synthetic-error-histogram.png" target="_blank" rel="noopener" aria-label="합성 단일 감쇠의 오차 분포 — 원본 크기로 보기"><img src="figures/synthetic-error-histogram.png" alt="합성 단일 감쇠의 오차 분포" loading="lazy" decoding="async"></a><figcaption>그림 8. 대표값을 제공한 단일 감쇠 321 조건의 절대 상대오차. 왼쪽은 2.5% 폭의 히스토그램, 오른쪽은 같은 값의 누적분포다. 전체 오차 범위를 유지하고 중앙값과 95 백분위를 표시했다. 미산출 24 조건은 분포에 포함하지 않았으며, 세부 범위와 최대값 사례는부록 A.7 에 제시한다.</figcaption></figure>
-<p>평균 절대 상대오차 2.60%는 ‘모든 결과가 2.60% 이내’라는 뜻이 아니다. 오차가 작은 조건이 많아도 일부 큰 오차가 함께 존재할 수 있고, 숫자가 없는 조건은 평균 계산 밖에 있다. 따라서 본문에서는 평균·중앙값·95백분위와 분포를 함께 보고, 세부 범위와 미산출 개수는 부록까지 연결해 확인할 수 있게 했다.</p>
-<p>합성 6초의 제공은 짧은 창의 구조적 한계를 보완했다는 근거다. 그러나 모형과 비슷한 신호에서의 회복이므로 실제 긴 공간에서의 6초 정확도 보장은 아니다. 또한 평균이 작아도 낮은 신호 대 잡음비(SNR)·짧은 신호 지지·단일 박수 근거 등에서 큰 오차가 남는다.</p>
-<p>v3에서 마련한 잡음·충격·감소 배경 대조 63시퀀스는 v4에서도 대표값을 만들지 않았다. v4가 기존 미산출을 복구하지 않도록 설계됐다는 점에서, 이 결과를 새로운 오탐 성능 향상으로 세지는 않는다. 실제 환경 모든 오입력의 오측정률을 측정한 실험도 아니다.</p>
-<h3 id="44-채택하지-않은-후보가-보여준-것">4.4 채택하지 않은 후보가 보여준 것</h3>
-<p>1.0.0 확정 전의 비교는 최종 엔진을 설명하는 근거이므로 함께 남긴다. 전체 연구와 세부 변형은 <a href="measurement-1.0.0-appendix.html">부록 A</a>에 정리했다.</p>
-<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
-<thead>
-<tr>
-<th>후보</th>
-<th>관찰한 이득</th>
-<th>최종 채택하지 않은 이유</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>500 Hz 제외</td>
-<td>일부 반복성·제공률 개선</td>
-<td>측정 대상과 참조 평균이 바뀜. 장소 F·G 보관 비교에서 차이가 오히려 커짐</td>
-</tr>
-<tr>
-<td>불안정 대역 20%, 나머지 40%</td>
-<td>값 이동 제한·일부 합성 오차 감소</td>
-<td>CV 기반으로 정확한 결과도 제외. 실제·과거 제공 54/58→45/58, 변경 사례의 참조 개선 미검증</td>
-</tr>
-<tr>
-<td>모형 진단·원본 근거·반복 근거 조합</td>
-<td>과도한 제외 감소, 일부 잡음 민감도·반복성 개선</td>
-<td>모형의 자기평가 한계, 별도 평가·실제 변경 사례의 정확도 이득 부족</td>
-</tr>
-<tr>
-<td>심각도별 가변 비중</td>
-<td>일부 환경 CV·잡음 변동 감소</td>
-<td>고정 비중보다 정확도 이득 없음, 기존값 이동 증가</td>
-</tr>
-<tr>
-<td>변동 잡음+세 박수 공동 추정</td>
-<td>배경소음 조건 간 차이와 잡음 추가 민감도 감소</td>
-<td>일부 동일 조건 반복성과 기존 현장 자료 결과 악화</td>
-</tr>
-<tr>
-<td>5·10 ms 시간 해상도</td>
-<td>초기 구조를 더 세밀하게 관찰</td>
-<td>일괄 적용의 정확도 개선 미확인. 블록 크기와 시작 구간 효과를 분리해야 함</td>
-</tr>
-<tr>
-<td>초기 0∼20 ms 전체·일부 재사용</td>
-<td>일부 합성·참조 차이 감소</td>
-<td>다른 대역·공간 반복성 악화, 공격 구간 경고 재유입</td>
-</tr>
-<tr>
-<td>두 감쇠 성분</td>
-<td>이상적 두 성분 복원</td>
-<td>기존 자료에서 불필요한 성분 선택·오차 증가, 구간 변경의 이득과 혼동 불가</td>
-</tr>
-<tr>
-<td>다른 두 박수로 남은 박수 예측</td>
-<td>일부 부작용을 피하는 선택 가능</td>
-<td>새 두 공간에서 참조 차이 개선은 작고 반복성 악화. 세 번의 분할 검사 모두 개선을 요구하면 기존값 유지</td>
-</tr>
-</tbody>
-</table></div>
-<p>마지막 교차 예측은 참조값이나 장소명을 선택 입력으로 사용하지 않았다. 세 박수 중 하나를 검사 대상으로 남기고, 나머지 두 박수에서 얻은 후보 T로 그 박수의 뒤쪽 전력을 예측했다. 검사 대상을 바꿔 세 번 반복한 뒤, 평균 예측 오차가 5% 이상 줄고 세 번 중 두 번 이상 개선할 때만 초기 구간을 사용했다. 자기 신호에 잘 맞는 후보가 다른 박수에도 설명력을 갖는지 확인하려는 절차다. 그럼에도 결과는 다음과 같았다.</p>
-<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
-<thead>
-<tr>
-<th>방법</th>
-<th style="text-align:right">장소 A REW 차이 ms</th>
-<th style="text-align:right">장소 A CV %</th>
-<th style="text-align:right">장소 B REW 차이 ms</th>
-<th style="text-align:right">장소 B CV %</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>현행 v4</td>
-<td style="text-align:right">+29.8</td>
-<td style="text-align:right">2.51</td>
-<td style="text-align:right">+32.8</td>
-<td style="text-align:right">1.69</td>
-</tr>
-<tr>
-<td>초기 구간 항상 포함</td>
-<td style="text-align:right">+16.7</td>
-<td style="text-align:right">3.19</td>
-<td style="text-align:right">+22.2</td>
-<td style="text-align:right">1.85</td>
-</tr>
-<tr>
-<td>세 박수 교차 예측</td>
-<td style="text-align:right">+27.5</td>
-<td style="text-align:right">3.21</td>
-<td style="text-align:right">+32.4</td>
-<td style="text-align:right">1.77</td>
-</tr>
-</tbody>
-</table></div>
-<figure><a href="figures/window-tradeoff.png" target="_blank" rel="noopener" aria-label="참조 차이와 반복성의 교환 — 원본 크기로 보기"><img src="figures/window-tradeoff.png" alt="참조 차이와 반복성의 교환" loading="lazy" decoding="async"></a><figcaption>그림 9. 같은 녹음을 서로 다른 구간 선택 방식으로 재분석한 결과. 장소 A5 시퀀스·장소 B6 시퀀스를 사용했다. 왼쪽은 REW 평균 대비 시간 차이, 오른쪽은측정 간 CV 다. 참조와 가까워지는 정도와반복성이 함께 개선되는지 비교하기 위한 두 지표다.</figcaption></figure>
-<p>현행이 모든 지표에서 최선이라는 결론은 아니다. 초기 정보를 살려 차이를 줄일 여지는 확인했지만, 검토한 선택 규칙이 그 이득을 반복성·제공률과 함께 확보하지 못했다. 이 결과에 따라 이번 구간 선택 연구를 종료하고 현행 v4·대역별 중앙값·3대역 동일 평균을 1.0.0 기준으로 확정했다.</p>
+<figure><a href="figures/synthetic-error-histogram.png" target="_blank" rel="noopener" aria-label="합성 단일 감쇠의 오차 분포 — 원본 크기로 보기"><img src="figures/synthetic-error-histogram.png" alt="합성 단일 감쇠의 오차 분포" loading="lazy" decoding="async"></a><figcaption>그림 8. 대표값을 제공한 단일 감쇠 321 조건의 절대 상대오차. 왼쪽은 2.5% 폭의 히스토그램, 오른쪽은 같은 값의 누적분포다. 전체 오차 범위를 유지하고 중앙값과 95 백분위를 표시했다. 미산출 24 조건은 분포에 포함하지 않았으며, 세부 범위와 최대값 사례는 부록 A.7 에 제시한다.</figcaption></figure>
+<p>전체 제공값의 오차 중앙값은 1.72%, 95백분위는 8.02%였다. 평균뿐 아니라 분포를 함께 확인해, 작은 오차로 회복된 조건이 다수를 차지함을 확인했다. 조건부 확장을 적용한 합성 6초 묶음에서도 66조건 중 64조건에 대표값을 제공했고, 제공값의 평균 절대 상대오차는 1.99%였다. 짧은 기본창을 유지하면서 필요한 경우 관측을 확장하는 설계가 알려진 긴 감쇠의 회복에도 기여한 결과다.</p>
+<p>잡음·충격·감소 배경으로 구성한 기존 대조 63시퀀스에서는 v4도 대표값을 만들지 않았다. 이는 사전 잡음 정보를 추가하면서 기존 대조의 미산출 판정을 유지했음을 확인한 회귀 검사다.</p>
+<p>합성 결과는 추정 계산 자체의 검증이며 실제 기기·검출을 포함한 성능과 구별한다. 24조건의 미산출, 전체 오차 범위와 큰 오차 사례는 부록 A.7에 보존했다. 실제 공간에서 긴 감쇠를 어느 범위까지 측정할 수 있는지는 별도 현장 검증의 대상이다.</p>
+<h3 id="44-결과와-근거를-함께-보존하는-측정-절차">4.4 결과와 근거를 함께 보존하는 측정 절차</h3>
+<p>v 1.0.0은 대표값을 산출하는 계산과 그 결과를 검토할 수 있는 기록 절차를 함께 갖췄다. 사용자는 세 번의 박수로 중역 감쇠를 확인하고, 대역별 결과와 기여 박수, 주의 정보로 대표값의 근거를 살펴볼 수 있다. 분석 가능한 원본과 처리 버전을 연결해 같은 관측을 재검토하는 경로도 확보했다.</p>
+<p>연구 과정에서는 이 구조를 이용해 초기 방식에서 대표값이 없던 현장 21시퀀스를 새 전력 모형으로 재분석하고, 당시 18시퀀스에서 값을 얻은 과정을 확인했다. 이는 새 실측 18회의 성과가 아니라, 보존한 관측을 이용해 분석 개선을 검증할 수 있다는 구체적 사례다.</p>
+<p>이상의 검증으로 확보한 것은 간단한 입력 절차에서의 감쇠 차이 포착, 검증한 조건에서의 반복 일관성, 알려진 감쇠에 대한 수치 회복, 원본에 연결된 결과의 검토 가능성이다. YEOEUM v 1.0.0은 이 근거를 바탕으로 공간의 중역 감쇠를 현장에서 예비 확인하고 유사한 조건에서 반복 비교하는 용도로 사용할 수 있다.</p>
 <h2 id="5-어떻게-활용하는-것이-적절한가">5. 어떻게 활용하는 것이 적절한가</h2>
 <h3 id="51-현장-예비-확인">5.1 현장 예비 확인</h3>
-<p>YEOEUM은 외부 장비 없이 중역 감쇠의 대략적인 길이와 대역별 차이를 확인하는 용도로 사용한다. 반복 비교에서는 가능한 한 휴대전화 위치·방향, 박수 위치와 주변 조건을 유지하고 대표값과 대역값·기여 근거를 함께 본다. 같은 조건의 반복성은 비교의 유용성을 높이지만 절대 정확도를 대신하지 않는다.</p>
-<p>규격 적합 판정, 시공 검수와 정밀 음향 설계처럼 더 강한 결론에는 목적에 맞는 기준 측정과 다수 위치의 관측이 필요하다. 숫자가 없는 대역을 0초로 읽거나, 빠진 대역을 다른 대역 평균으로 채워 기존 대표값처럼 비교하지 않는다.</p>
+<p>YEOEUM v 1.0.0은 외부 장비를 준비하기 전 공간의 중역 감쇠가 어느 정도인지 확인하고, 유사한 조건의 결과를 반복 비교하는 데 사용한다. 녹음·연습·공연 공간을 살펴볼 때 대표값으로 감쇠의 대략적인 길이를 읽고, 대역별 값으로 어떤 중역 성분이 상대적으로 오래 남는지 확인할 수 있다. 검증한 두 장소의 차이와 반복 일관성은 이러한 사용을 뒷받침한다.</p>
+<p>비교할 때는 같은 스마트폰과 분석 버전을 사용하고, 휴대전화 위치·방향과 박수 위치를 가능한 한 유지한다. 주변 소음이 일정한 조건에서 여러 시퀀스를 얻은 뒤 대표값과 대역값·기여 근거를 함께 읽는다. 공간을 바꿔 비교한다면 각 공간에서 비슷한 위치 관계와 절차를 사용한다. 작은 차이는 반복값의 흩어짐과 함께 판단하고, 위치나 배경이 달라졌다면 공간 자체의 변화와 구별해 기록한다.</p>
+<p>기여 박수가 적거나 주의 정보가 있는 경우에는 배경과 입력 조건을 정리해 다시 측정한다. 숫자가 없는 대역은 감쇠가 0초라는 뜻이 아니라 현재 관측의 근거가 부족하다는 뜻이다. 세 대역의 대표값과 부분 결과를 구별하면, 측정이 알려주는 정보의 범위 안에서 일관되게 비교할 수 있다. 규격 적합 판정과 정밀 설계의 적용 범위는 3.1절에 설명했다.</p>
 <h3 id="52-원본과-처리-버전을-연결한-기록">5.2 원본과 처리 버전을 연결한 기록</h3>
 <p>기록의 단위는 최종 숫자만이 아니라 원본·측정 조건·선택 시점·분석 버전·대역별 결과·실패 이유다. 과거 T20, 초기 전력 모형, 최종 v4 결과를 같은 정의로 소급 변경하지 않는다. 동일 원본에 새 분석을 적용하면 원래 결과와 구분해 저장해야 한다.</p>
 <p>이 구조는 현재 판단이 바뀌더라도 어떤 관측에서 어떤 결론을 얻었는지 검토할 수 있게 한다. 초기 현장 0/21과 이후 같은 원본의 18/21 재분석도 이 구분 덕분에 함께 해석할 수 있다.</p>
@@ -455,7 +370,9 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 <p>대역별 감쇠 시간은 공간을 비교하는 수치인 동시에, 새로운 잔향을 만드는 조건으로 사용할 수 있다. 낮은 대역이 오래 남고 높은 대역이 먼저 사라지는 특성을 얻었다면, 새로운 음성이나 악기에도 그 소멸 속도의 관계를 적용하는 방식이다.</p>
 <p>여음 트레이스(YEOEUM TRACE)는 이 목적을 위해 연구한 측정 기반 잔향 합성 엔진이다. 여음에서 얻은 대역별 감쇠 시간을 입력받아 잔향 응답을 만들고, 이를 BLOOM 같은 리버브 도구에서 새로운 소리에 적용하는 경로를 구성한다. 여기서 BLOOM은 소리에 잔향을 부여하는 오디오 플러그인이다.</p>
 <p>이 활용에는 대표값 하나보다 평균내기 전 대역별 정보가 필요하다. 대역 사이의 시간 차이를 유지해야 서로 다른 소멸 특성을 합성에 전달할 수 있기 때문이다. 입력 측정의 근거와 유효 범위를 함께 전달하고, 완성한 잔향이 목표 시간을 따르는지는 합성 단계에서 따로 검사한다. TRACE의 합성 방식과 BLOOM에 연결하는 제작 과정은 별도 보고서에서 다룬다.</p>
-<p>후속 측정 검증은 고정한 엔진으로 새로운 공간·기종·위치·잡음 조건을 확인하고, 참조 품질과 대역별 차이를 함께 기록하는 데 둔다. 이 문서에서 제시한 실측 결과는 해당 검증 기기의 범위에 두며, 다른 스마트폰 기종의 음향 성능은 별도의 자료로 평가한다.</p>
+<h3 id="54-v-100의-기준과-후속-보고">5.4 v 1.0.0의 기준과 후속 보고</h3>
+<p>v 1.0.0은 세 번의 박수, 중역 세 대역의 감쇠 추정, 대역별 중앙값과 동일 비중 평균, 원본과 분석 근거를 연결한 기록을 하나의 측정 절차로 확정한 버전이다. 본 보고서의 검증 결과는 이 버전을 현장 예비 확인과 반복 비교에 사용하는 근거이며, 이후 개선을 평가할 기준이 된다.</p>
+<p>후속 연구에서는 고정한 엔진으로 새로운 공간·기종·위치·잡음 조건을 확인하고 적용 근거를 넓힌다. 실측 성능을 확인한 기종과 아직 확인하지 않은 기종은 구별해 기록한다. 분석 개선이 1.1.0 등의 후속 버전에 반영되면 같은 원본에서의 전후 비교와 새 현장 검증을 함께 보고하고, v 1.0.0의 결과와 처리 정의는 그대로 보존한다.</p>
 <h2 id="참고문헌">참고문헌</h2>
 <ol>
 <li>Martin, A., Duée, R., &amp; Blais, J. (2019). <em>Acoustic Decision Support Smartphone Application for Building Stakeholders</em>. ICSV26. <a href="https://www.atelier7hz.com/wp/ACOUSTIC%20DECISION%20SUPPORT%20SMARTPHONE%20APPLICATION%20FOR%20BUILDING%20STAKEHOLDERS.pdf">공개 원문</a>.</li>
@@ -463,7 +380,7 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 <li>Room EQ Wizard. <em>RT60 Decay Graph</em>. <a href="https://www.roomeqwizard.com/help/help_en-GB/html/graph_rt60decay.html">공식 기술 문서</a>.</li>
 </ol>
 <h2 id="연구-범위와-기록-기준">연구 범위와 기록 기준</h2>
-<p>본 보고서는 2026년 10월부터 11월 초까지 진행한 YEOEUM의 기획·캡처 실험·감쇠 분석·현장 비교와 1.0.0 측정 방식의 확정 과정을 정리한다. 연구 기간 전체의 설계 선택과 검증을 다루며, 최종 방식의 실측 결과는 그 방식을 사용한 기록으로 구분해 제시했다.</p>
+<p>본 보고서는 2026년 10월부터 11월 초까지 진행한 YEOEUM의 기획·캡처 실험·감쇠 분석·현장 비교와 v 1.0.0 측정 방식의 확정 과정을 정리한다. 연구 기간 전체의 설계 선택과 검증을 다루며, 최종 방식의 실측 결과는 그 방식을 사용한 기록으로 구분해 제시했다.</p>
 <p>원본 녹음, 처리 버전, 대역별 추정값과 미산출 이유를 연결해 보관했다. 과거 T20와 후기 진단, 초기 전력 모형과 최종 모형의 결과는 당시 정의를 유지하며, 재분석을 새 실측으로 세지 않았다. 합성 신호 검사는 알려진 조건에서의 계산 검증으로, 실제 스마트폰 수음·공간 비교와 함께 해석한다.</p>
 <p>세부 후보의 비교와 채택 판단은 <a href="measurement-1.0.0-appendix.html">부록 A</a>에 정리했다.</p>
 </article><nav class="report-end" aria-label="보고서 관련 페이지"><a href="measurement-1.0.0-appendix.html">부록 A — 검토한 방법과 채택 판단</a><a href="index.html">연구 목록으로</a></nav></main><footer><div><a href="../privacy.html">개인정보처리방침</a><a href="index.html">연구</a><span>© 2026 크리티컬 리스닝 커뮤니티 · Made by Mingkoo</span></div><a href="mailto:yeoeum@anotier.art">yeoeum@anotier.art</a></footer></body></html>

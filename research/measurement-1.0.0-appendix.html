@@ -1,7 +1,7 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM</title><meta name="description" content="강민구(Mingkoo)의 YEOEUM 측정 연구. 스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정의 설계 과정과 검증 결과."><link rel="canonical" href="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta property="og:type" content="article"><meta property="og:title" content="스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM"><meta property="og:url" content="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta name="author" content="강민구(Mingkoo)"><link rel="stylesheet" href="../styles.css?v=20261104-research"><link rel="stylesheet" href="research.css?v=1"><link rel="stylesheet" href="math/katex.min.css"></head><body><a class="skip" href="#main">본문으로</a><header><a class="brand" href="../index.html" aria-label="YEOEUM 홈"><img src="../assets/wordmark.png" alt="YEOEUM" width="150" height="50"></a><div class="header-nav"><nav aria-label="주 메뉴"><a href="../support.html">사용법</a><a href="index.html" aria-current="page">연구</a><a href="../licenses.html">라이센스</a></nav><nav class="languages" aria-label="Language"><a href="index.html" lang="ko" aria-current="page">한국어</a><a href="index.en.html" lang="en">English</a></nav></div></header><main id="main" class="report"><p class="breadcrumb"><a href="index.html">연구</a> / <a href="measurement-1.0.0.html">측정 연구 · 1.0.0</a> / 부록</p><article><h1 id="부록-a-검토한-방법과-100-채택-판단">부록 A. 검토한 방법과 1.0.0 채택 판단</h1>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM</title><meta name="description" content="강민구(Mingkoo)의 YEOEUM 측정 연구. 스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정의 설계 과정과 검증 결과."><link rel="canonical" href="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta property="og:type" content="article"><meta property="og:title" content="스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM"><meta property="og:url" content="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta name="author" content="강민구(Mingkoo)"><link rel="stylesheet" href="../styles.css?v=20261104-research"><link rel="stylesheet" href="research.css?v=1"><link rel="stylesheet" href="math/katex.min.css"></head><body><a class="skip" href="#main">본문으로</a><header><a class="brand" href="../index.html" aria-label="YEOEUM 홈"><img src="../assets/wordmark.png" alt="YEOEUM" width="150" height="50"></a><div class="header-nav"><nav aria-label="주 메뉴"><a href="../support.html">사용법</a><a href="index.html" aria-current="page">연구</a><a href="../licenses.html">라이센스</a></nav><nav class="languages" aria-label="Language"><a href="index.html" lang="ko" aria-current="page">한국어</a><a href="index.en.html" lang="en">English</a></nav></div></header><main id="main" class="report"><p class="breadcrumb"><a href="index.html">연구</a> / <a href="measurement-1.0.0.html">측정 연구 · v 1.0.0</a> / 부록</p><article><h1 id="부록-a-검토한-방법과-v-100-채택-판단">부록 A. 검토한 방법과 v 1.0.0 채택 판단</h1>
 <p>YEOEUM 기술 연구 보고서 · 방법 비교 및 검증 자료</p>
 <p>아래의 ‘미채택’은 해당 연구 후보를 최종 측정 엔진에 넣지 않았다는 뜻이다. 일반 방법의 불가능성이나 모든 후속 연구의 무용성을 의미하지 않는다. 과거 제품에 반영됐다가 현행 전력 모형으로 대체된 방법, 연구 중 반례로 수정된 초안도 구분했다. 아래 연구명은 프로젝트에서 보관한 실험 기록을 식별한다. 같은 자료의 재분석은 독립 실측으로 합산하지 않았다.</p>
-<details class="report-toc"><summary>목차</summary><nav aria-label="보고서 목차"><ol role="list" style="list-style:none;padding-left:0"><li><a href="#a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</a></li><li><a href="#a2-t20-계열의-대안과-진단">A.2 T20 계열의 대안과 진단</a></li><li><a href="#a3-전력-모형과-최종-v4-까지의-선택">A.3 전력 모형과 최종 v4 까지의 선택</a></li><li><a href="#a4-100-확정-전-미채택-연구">A.4 1.0.0 확정 전 미채택 연구</a></li><li><a href="#a5-참조와-반증-자료의-사용">A.5 참조와 반증 자료의 사용</a></li><li><a href="#a6-참조-획득-조건의-보충-기록">A.6 참조 획득 조건의 보충 기록</a></li><li><a href="#a7-합성-검사의-전체-오차-범위와-경계-사례">A.7 합성 검사의 전체 오차 범위와 경계 사례</a></li></ol></nav></details><h2 id="a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</h2>
+<details class="report-toc"><summary>목차</summary><nav aria-label="보고서 목차"><ol role="list" style="list-style:none;padding-left:0"><li><a href="#a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</a></li><li><a href="#a2-t20-계열의-대안과-진단">A.2 T20 계열의 대안과 진단</a></li><li><a href="#a3-전력-모형과-최종-v4-까지의-선택">A.3 전력 모형과 최종 v4 까지의 선택</a></li><li><a href="#a4-v-100-확정-전-미채택-연구">A.4 v 1.0.0 확정 전 미채택 연구</a></li><li><a href="#a5-참조와-반증-자료의-사용">A.5 참조와 반증 자료의 사용</a></li><li><a href="#a6-참조-획득-조건의-보충-기록">A.6 참조 획득 조건의 보충 기록</a></li><li><a href="#a7-합성-검사의-전체-오차-범위와-경계-사례">A.7 합성 검사의 전체 오차 범위와 경계 사례</a></li><li><a href="#a8-최종-구간-선택과-후보-비교의-상세-결과">A.8 최종 구간 선택과 후보 비교의 상세 결과</a></li></ol></nav></details><h2 id="a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</h2>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
 <thead>
 <tr>
@@ -214,7 +214,7 @@
 </tr>
 </tbody>
 </table></div>
-<h2 id="a4-100-확정-전-미채택-연구">A.4 1.0.0 확정 전 미채택 연구</h2>
+<h2 id="a4-v-100-확정-전-미채택-연구">A.4 v 1.0.0 확정 전 미채택 연구</h2>
 <div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
 <thead>
 <tr>
@@ -358,4 +358,99 @@
 </tbody>
 </table></div>
 <p>6 초 묶음은 전체 집합과 중복되는 조건을 포함한다. 미산출 24 조건은 오차 0 으로 넣지 않았고, 제공값 통계에서 제외했다. 본문 히스토그램과 누적분포에는 321 개 제공값을 모두 사용했다.</p>
+<h2 id="a8-최종-구간-선택과-후보-비교의-상세-결과">A.8 최종 구간 선택과 후보 비교의 상세 결과</h2>
+<p>v 1.0.0에서 채택한 구성의 판단 근거를 상세 비교와 함께 제시한다. 다음 후보들은 대역별 정보, 반복성, 값 제공과 참조 차이를 함께 검토하는 데 사용했다.</p>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>후보</th>
+<th>관찰한 이득</th>
+<th>최종 채택하지 않은 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 Hz 제외</td>
+<td>일부 반복성·제공률 개선</td>
+<td>측정 대상과 참조 평균이 바뀜. 장소 F·G 보관 비교에서 차이가 오히려 커짐</td>
+</tr>
+<tr>
+<td>불안정 대역 20%, 나머지 40%</td>
+<td>값 이동 제한·일부 합성 오차 감소</td>
+<td>CV 기반으로 정확한 결과도 제외. 실제·과거 제공 54/58→45/58, 변경 사례의 참조 개선 미검증</td>
+</tr>
+<tr>
+<td>모형 진단·원본 근거·반복 근거 조합</td>
+<td>과도한 제외 감소, 일부 잡음 민감도·반복성 개선</td>
+<td>모형의 자기평가 한계, 별도 평가·실제 변경 사례의 정확도 이득 부족</td>
+</tr>
+<tr>
+<td>심각도별 가변 비중</td>
+<td>일부 환경 CV·잡음 변동 감소</td>
+<td>고정 비중보다 정확도 이득 없음, 기존값 이동 증가</td>
+</tr>
+<tr>
+<td>변동 잡음+세 박수 공동 추정</td>
+<td>배경소음 조건 간 차이와 잡음 추가 민감도 감소</td>
+<td>일부 동일 조건 반복성과 기존 현장 자료 결과 악화</td>
+</tr>
+<tr>
+<td>5·10 ms 시간 해상도</td>
+<td>초기 구조를 더 세밀하게 관찰</td>
+<td>일괄 적용의 정확도 개선 미확인. 블록 크기와 시작 구간 효과를 분리해야 함</td>
+</tr>
+<tr>
+<td>초기 0∼20 ms 전체·일부 재사용</td>
+<td>일부 합성·참조 차이 감소</td>
+<td>다른 대역·공간 반복성 악화, 공격 구간 경고 재유입</td>
+</tr>
+<tr>
+<td>두 감쇠 성분</td>
+<td>이상적 두 성분 복원</td>
+<td>기존 자료에서 불필요한 성분 선택·오차 증가, 구간 변경의 이득과 혼동 불가</td>
+</tr>
+<tr>
+<td>다른 두 박수로 남은 박수 예측</td>
+<td>일부 부작용을 피하는 선택 가능</td>
+<td>새 두 공간에서 참조 차이 개선은 작고 반복성 악화. 세 번의 분할 검사 모두 개선을 요구하면 기존값 유지</td>
+</tr>
+</tbody>
+</table></div>
+<p>마지막 교차 예측은 참조값이나 장소명을 선택 입력으로 사용하지 않았다. 세 박수 중 하나를 검사 대상으로 남기고, 나머지 두 박수에서 얻은 후보 T로 그 박수의 뒤쪽 전력을 예측했다. 검사 대상을 바꿔 세 번 반복한 뒤, 평균 예측 오차가 5% 이상 줄고 세 번 중 두 번 이상 개선할 때만 초기 구간을 사용했다. 자기 신호에 잘 맞는 후보가 다른 박수에도 설명력을 갖는지 확인하려는 절차다. 비교 결과는 다음과 같다.</p>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>방법</th>
+<th style="text-align:right">장소 A REW 차이 ms</th>
+<th style="text-align:right">장소 A CV %</th>
+<th style="text-align:right">장소 B REW 차이 ms</th>
+<th style="text-align:right">장소 B CV %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현행 v4</td>
+<td style="text-align:right">+29.8</td>
+<td style="text-align:right">2.51</td>
+<td style="text-align:right">+32.8</td>
+<td style="text-align:right">1.69</td>
+</tr>
+<tr>
+<td>초기 구간 항상 포함</td>
+<td style="text-align:right">+16.7</td>
+<td style="text-align:right">3.19</td>
+<td style="text-align:right">+22.2</td>
+<td style="text-align:right">1.85</td>
+</tr>
+<tr>
+<td>세 박수 교차 예측</td>
+<td style="text-align:right">+27.5</td>
+<td style="text-align:right">3.21</td>
+<td style="text-align:right">+32.4</td>
+<td style="text-align:right">1.77</td>
+</tr>
+</tbody>
+</table></div>
+<figure><a href="figures/window-tradeoff.png" target="_blank" rel="noopener" aria-label="참조 차이와 반복성의 교환 — 원본 크기로 보기"><img src="figures/window-tradeoff.png" alt="참조 차이와 반복성의 교환" loading="lazy" decoding="async"></a><figcaption>그림 9. 같은 녹음을 서로 다른 구간 선택 방식으로 재분석한 결과. 장소 A5 시퀀스·장소 B6 시퀀스를 사용했다. 왼쪽은 REW 평균 대비 시간 차이, 오른쪽은 측정 간 CV 다. 참조와 가까워지는 정도와 반복성이 함께 개선되는지 비교하기 위한 두 지표다.</figcaption></figure>
+<p>이 비교에서 기본 구간은 두 장소 모두 가장 작은 측정 간 CV를 보였다. 초기 구간을 포함하면 참조 차이를 더 줄일 수 있었으나 반복성은 낮아졌다. v 1.0.0은 검증한 반복 일관성과 기존 값 제공 조건을 유지하는 기본 구간, v4·대역별 중앙값·3대역 동일 평균을 채택했다. 초기 정보의 추가 활용은 이후 개선 연구의 대상으로 남긴다.</p>
 </article><nav class="report-end" aria-label="보고서 관련 페이지"><a href="measurement-1.0.0.html">본문으로 돌아가기</a><a href="index.html">연구 목록으로</a></nav></main><footer><div><a href="../privacy.html">개인정보처리방침</a><a href="index.html">연구</a><span>© 2026 크리티컬 리스닝 커뮤니티 · Made by Mingkoo</span></div><a href="mailto:yeoeum@anotier.art">yeoeum@anotier.art</a></footer></body></html>
