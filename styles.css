@@ -3,3 +3,5 @@
 html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] p{word-break:keep-all;overflow-wrap:break-word}
 
 .links a{display:inline-flex;align-items:center;justify-content:center;min-width:144px;min-height:48px;padding:10px 24px;white-space:nowrap}
+
+.note .research-link{margin-top:14px;font-size:14px}

@@ -1,0 +1,361 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM</title><meta name="description" content="강민구(Mingkoo)의 YEOEUM 측정 연구. 스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정의 설계 과정과 검증 결과."><link rel="canonical" href="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta property="og:type" content="article"><meta property="og:title" content="스마트폰과 세 번의 박수를 이용한 공간 감쇠 추정 — 부록 — YEOEUM"><meta property="og:url" content="https://yeoeum.anotier.art/research/measurement-1.0.0-appendix.html"><meta name="author" content="강민구(Mingkoo)"><link rel="stylesheet" href="../styles.css?v=20261104-research"><link rel="stylesheet" href="research.css?v=1"><link rel="stylesheet" href="math/katex.min.css"></head><body><a class="skip" href="#main">본문으로</a><header><a class="brand" href="../index.html" aria-label="YEOEUM 홈"><img src="../assets/wordmark.png" alt="YEOEUM" width="150" height="50"></a><div class="header-nav"><nav aria-label="주 메뉴"><a href="../support.html">사용법</a><a href="index.html" aria-current="page">연구</a><a href="../licenses.html">라이센스</a></nav><nav class="languages" aria-label="Language"><a href="index.html" lang="ko" aria-current="page">한국어</a><a href="index.en.html" lang="en">English</a></nav></div></header><main id="main" class="report"><p class="breadcrumb"><a href="index.html">연구</a> / <a href="measurement-1.0.0.html">측정 연구 · 1.0.0</a> / 부록</p><article><h1 id="부록-a-검토한-방법과-100-채택-판단">부록 A. 검토한 방법과 1.0.0 채택 판단</h1>
+<p>YEOEUM 기술 연구 보고서 · 방법 비교 및 검증 자료</p>
+<p>아래의 ‘미채택’은 해당 연구 후보를 최종 측정 엔진에 넣지 않았다는 뜻이다. 일반 방법의 불가능성이나 모든 후속 연구의 무용성을 의미하지 않는다. 과거 제품에 반영됐다가 현행 전력 모형으로 대체된 방법, 연구 중 반례로 수정된 초안도 구분했다. 아래 연구명은 프로젝트에서 보관한 실험 기록을 식별한다. 같은 자료의 재분석은 독립 실측으로 합산하지 않았다.</p>
+<details class="report-toc"><summary>목차</summary><nav aria-label="보고서 목차"><ol><li><a href="#a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</a></li><li><a href="#a2-t20-계열의-대안과-진단">A.2 T20 계열의 대안과 진단</a></li><li><a href="#a3-전력-모형과-최종-v4-까지의-선택">A.3 전력 모형과 최종 v4 까지의 선택</a></li><li><a href="#a4-100-확정-전-미채택-연구">A.4 1.0.0 확정 전 미채택 연구</a></li><li><a href="#a5-참조와-반증-자료의-사용">A.5 참조와 반증 자료의 사용</a></li><li><a href="#a6-참조-획득-조건의-보충-기록">A.6 참조 획득 조건의 보충 기록</a></li><li><a href="#a7-합성-검사의-전체-오차-범위와-경계-사례">A.7 합성 검사의 전체 오차 범위와 경계 사례</a></li></ol></nav></details><h2 id="a1-입력가진필터와-초기-분석">A.1 입력·가진·필터와 초기 분석</h2>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>검토 방법</th>
+<th>확인한 내용</th>
+<th>최종 상태·판단</th>
+<th>연구 기록</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>내장 스피커 ESS·Measurement/Default</td>
+<td>녹음 레벨·포락선 차이, 강한 초기 성분. 넓은 대역 꼬리가 저역에 지배된 반례</td>
+<td>최종 주 입력은 박수. 모드별 레벨 차이만으로 정확도 선택 불가</td>
+<td>모드, 반복, 다른 공간</td>
+</tr>
+<tr>
+<td>초기 IIR 대역 필터</td>
+<td>혼합 저역 성분이 500 Hz 후기 곡선에 유입</td>
+<td>FFT 대역 투영으로 대체. 표준 필터 인증 주장은 없음</td>
+<td>문제, 수정, 실기기</td>
+</tr>
+<tr>
+<td>ESS 자동 출력 레벨 점검</td>
+<td>두 실제 스윕의 큰 입력을 피했지만 유효 감쇠 부족은 지속</td>
+<td>레벨 제어는 캡처 개선. 최종 측정 해법으로 선택하지 않음</td>
+<td>설계, 실기기 결과</td>
+</tr>
+<tr>
+<td>박수·별도 음원</td>
+<td>실제 후보와 장소 관련 차이 관찰. 약한 대역·입력 경고·검출 변수 존재</td>
+<td>최종 입력 채택. 초기 소수 사례의 정확도 일반화는 보류</td>
+<td>첫 박수, 반복, 초기 정상</td>
+</tr>
+<tr>
+<td>Float unity 초과 전체 차단</td>
+<td>피크 근처 소수 표본 때문에 다른 기준을 만족하는 분석도 차단</td>
+<td>입력 경고와 분석 구간의 상태를 구분. 모든 경고 해제·원본 정규화는 미채택</td>
+<td>헤드룸, 차단 감사, build14</td>
+</tr>
+<tr>
+<td>강도·거리 조절만으로 입력 문제 해결</td>
+<td>1 m 에서도 보수적 입력 플래그가 남음</td>
+<td>거리만 늘리거나 성공까지 반복시키는 해결책으로 보지 않음</td>
+<td>1 m, build11</td>
+</tr>
+<tr>
+<td>준비음·검출창</td>
+<td>준비음 마스킹과 실제 박수 사건을 분리. 작은 선행음으로 잘못된 사건 선택</td>
+<td>검출 수정 반영. 감쇠 정확도와 분리</td>
+<td>시퀀스, 기기, 피크 고정</td>
+</tr>
+<tr>
+<td>단발 최대값 기반 준비 문턱·60 ms 창</td>
+<td>현장 미검출·선행음 확정 두 사례 재현</td>
+<td>95 백분위 준비 기준·120 ms 확인 반영</td>
+<td>현장, 대조, 이식</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="a2-t20-계열의-대안과-진단">A.2 T20 계열의 대안과 진단</h2>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>검토 방법</th>
+<th>확인한 내용</th>
+<th>최종 상태·판단</th>
+<th>연구 기록</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전체 −5∼−25 dB T20·R² 완화</td>
+<td>강한 초기 성분에서 실패. 완화 시 다중 기울기도 통과. 소스 자체 감쇠도 좋은 적합</td>
+<td>현행 지표로 대체. R²만 낮추는 해법 미채택</td>
+<td>분석 감사</td>
+</tr>
+<tr>
+<td>별도 후기 전력+잡음 모형</td>
+<td>일부 1 kHz 반복성·합성 회복은 유망. 두 기울기·소스 감쇠 구별 한계</td>
+<td>연구용으로 분리. T20 대용 승격은 하지 않음. 현행 비선형 모형과도 구현이 다름</td>
+<td>후기 모형</td>
+</tr>
+<tr>
+<td>짧거나 낮은 R²의 경고 기울기 표시</td>
+<td>수학적으로 계산되는 숫자와 적격 결과를 구분 가능</td>
+<td>과거 진단 표시 반영. 현행 대표값의 정확도 개선으로 세지 않음</td>
+<td>v0.1.1, 실기기</td>
+</tr>
+<tr>
+<td>250 Hz 추가</td>
+<td>일부 저역 정보 존재. 반복 적격 부족·필터-only 참고값 반례</td>
+<td>최종 측정 대표 대역에 미채택. TRACE 의 저역 탐색과도 구분</td>
+<td>250 Hz 감사, 장소 I</td>
+</tr>
+<tr>
+<td>피크/잡음·끝점 문턱 완화</td>
+<td>35/10→32/8 dB 는 경계값 일부 확보, 다른 병목 지속</td>
+<td>과거 참고 등급 일부 반영. 현행 전력 모형의 판정 상수로 승계하지 않음</td>
+<td>잡음 문턱, 제공률, 전체 대조</td>
+</tr>
+<tr>
+<td>곡선형 20 dB 통과기간·입력 예외</td>
+<td>현장 참고 제공 확대. 두 이산 충격만으로 참고값이 생기는 반례</td>
+<td>과거 참고 경로로 보존. 현행 대표값은 다른 모형</td>
+<td>현장 반영, 반례</td>
+</tr>
+<tr>
+<td>고정 회귀 구간 이동·T30·Topt</td>
+<td>일부 구간에서 참조와 가까워지고 다른 구간에서는 순서 역전</td>
+<td>참조에 맞는 구간·지표만 선택하는 대체 미채택</td>
+<td>구간 감사, 옥타브 비교</td>
+</tr>
+<tr>
+<td>10 ms 격자→연속 이동평균</td>
+<td>0.5 ms 원점 변화의 종료점 민감도 감소</td>
+<td>유용한 수치 안정화지만 현장 제공률 0/21 지속. 최종 해법으로 단독 채택 안 함</td>
+<td>원점·이동평균</td>
+</tr>
+<tr>
+<td>종료 뒤 재상승 확인·잡음 차감·단순 꼬리 보상</td>
+<td>현장 최대 1/21 참고 대표값, 합성에서도 일괄 우위 없음</td>
+<td>현행 제품 방식으로 미채택</td>
+<td>방법별 대조</td>
+</tr>
+<tr>
+<td>20→15→10 dB 감쇠폭 축소</td>
+<td>개별 대역 제공 증가 가능, 대표값·반복성 병목 지속. 일부 대조 오인</td>
+<td>T20 와 같은 의미의 지표로 교체 미채택</td>
+<td>짧은 범위</td>
+</tr>
+<tr>
+<td>대역별 회차 분리·5 개 후처리 묶음·CV 제거</td>
+<td>집계만 바꿔도 초기 T20 현장 문제는 충분히 해결되지 않음</td>
+<td>원 논문 복제 또는 실제 5 박수 실험으로 해석 안 함. 현행 대역별 집계는 새 모형에서 별도 선택</td>
+<td>반복 집계</td>
+</tr>
+<tr>
+<td>6300 Hz 리샘플링</td>
+<td>연산량 감소 가능. 일부 판정·거절 진단의 차이 잔존</td>
+<td>현행 분석 입력·표본률 변경 미채택. iPhone 속도 개선으로 주장 안 함</td>
+<td>리샘플링</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="a3-전력-모형과-최종-v4-까지의-선택">A.3 전력 모형과 최종 v4 까지의 선택</h2>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>검토 방법</th>
+<th>확인한 내용</th>
+<th>최종 상태·판단</th>
+<th>연구 기록</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 초 세 박수 공동 T</td>
+<td>기존 0/21 자료에서 18/21 수치, 일부 반복 CV 매우 큼. 한 박수 영향</td>
+<td>공통 T 최종 미채택</td>
+<td>공동 추정</td>
+</tr>
+<tr>
+<td>배경 시간 기울기 추가</td>
+<td>장소 E 일부 CV 개선, 제공 감소·다른 묶음 미해결</td>
+<td>단독 해법 미채택</td>
+<td>민감도</td>
+</tr>
+<tr>
+<td>고정 관측창·파워 평균/중앙값·개별 추정 중앙값</td>
+<td>늦은 재상승 영향과 일부 반복 편차 감소. 단일 박수 큰 합성 오차도 존재</td>
+<td>20 ms·짧은 기본창·개별 대역 추정 후 중앙값 채택</td>
+<td>반복 편차 연구, Swift 이식</td>
+</tr>
+<tr>
+<td>고정 0.5 초창의 긴 RT 추정</td>
+<td>4.6 초 구조적 승인 한계, 5 초 짧은 선택 편향·6 초 미제공</td>
+<td>조건부 확장의 문제 정의로 사용</td>
+<td>긴 합성</td>
+</tr>
+<tr>
+<td>v2·1.2 초 분기·1.5 초 확장</td>
+<td>합성 6 초 회복. 현장 CV·감소 배경 오인 악화</td>
+<td>최종 v2 미채택. 실패 대조를 v3 설계에 반영</td>
+<td>v2, 회귀 감사</td>
+</tr>
+<tr>
+<td>v3·사건 후 초과·조건부 확장·다른 박수 확인</td>
+<td>앞선 회귀 제한, 6 초 일부 미산출을 유지하며 복원</td>
+<td>최종 v4 의 기본 구조로 계승</td>
+<td>v3</td>
+</tr>
+<tr>
+<td>공통 감쇠·유효 구간·남은 박수 예측</td>
+<td>일부 REW 차이 감소. 반복성·제공률·예측 동시 개선 부족</td>
+<td>측정기 일괄 교체 미채택</td>
+<td>절제 대조</td>
+</tr>
+<tr>
+<td>변동 잡음·신호비 가중·공동 추정 9 후보</td>
+<td>추가 소음 유무 평균 차이·잡음 추가 민감도 감소, 일부 반복성 악화</td>
+<td>전체 결합 모형 미채택</td>
+<td>배경소음 조정 연구</td>
+</tr>
+<tr>
+<td>v4·사전 잡음 p10/p90 범위</td>
+<td>짧은 기존 적격값에 제한적 변경, 제공·긴 경로 보존</td>
+<td>최종 채택. 일반 잡음 분리·고정 RT 보정이 아님</td>
+<td>이식 결과, 확정 기준</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="a4-100-확정-전-미채택-연구">A.4 1.0.0 확정 전 미채택 연구</h2>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>후보</th>
+<th>평가 결과와 판단</th>
+<th>연구 기록</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 Hz 제외</td>
+<td>일부 반복·제공 이득. 대역 정의가 달라지며 같은 대역으로 맞춘 참조 차이도 악화한 사례. 3 대역 유지</td>
+<td>2 대역</td>
+</tr>
+<tr>
+<td>CV·기여 수로 20/40/40</td>
+<td>정확한 결과도 제거하고 일정한 편향은 못 찾음. 실제·과거 제공 54→45/58. 미채택</td>
+<td>조건부 비중</td>
+</tr>
+<tr>
+<td>모형 지지·감쇠폭·잔차 고정 상한</td>
+<td>정상 참조·조용한 기록까지 제거. 미채택</td>
+<td>진단 지표</td>
+</tr>
+<tr>
+<td>진단 상대점수 Q</td>
+<td>앞 후보보다 제공 회복. 자기 모형 진단·평가 사례 부족. 미채택</td>
+<td>상대점수</td>
+</tr>
+<tr>
+<td>원본 신호/잡음 직접 판정</td>
+<td>모형 자기평가를 줄이고 제공 유지. 별도 평가의 정확도 이득 부족. 미채택</td>
+<td>원본 근거</td>
+</tr>
+<tr>
+<td>원본 근거 AND 박수 일관성</td>
+<td>CV 단독의 과도한 제외 감소. 원본 단독 대비 추가 이득 작음. 미채택</td>
+<td>결합 판정</td>
+</tr>
+<tr>
+<td>불안정 정도에 따른 적응 비중</td>
+<td>일부 CV 개선, 제시값 이동 증가. 고정 비중 대비 정확도 우위 없음. 미채택</td>
+<td>적응 비중</td>
+</tr>
+<tr>
+<td>사전 잡음 고정·재적합·종료·시작 이동</td>
+<td>특정 Black 1 kHz 차이는 잡음 하나로 설명 불가. 일괄 변경은 다른 대역 악화. 미채택</td>
+<td>원인 감사</td>
+</tr>
+<tr>
+<td>5/10/20 ms·구간 경계 분리</td>
+<td>순수 지수의 블록 평균은 기울기 보존. 작은 블록 일괄 이득 없음. 20 ms 유지</td>
+<td>시간 해상도</td>
+</tr>
+<tr>
+<td>초기 전체·Theil–Sen 연속성·입력 경고 변형</td>
+<td>합성 일부 개선. 실제 참조·일부 배경소음 실험의 반복성·입력 경고 충돌 잔존. 미채택</td>
+<td>초기 선택</td>
+</tr>
+<tr>
+<td>첫 5/10/15 ms 만 제외</td>
+<td>Black 1 kHz 개선 가능. 다른 대역·실제 반복성 기준 미충족. 미채택</td>
+<td>일부 초기</td>
+</tr>
+<tr>
+<td>두 지수+잡음·느린 T/모형 EDC T20·박수 확인</td>
+<td>이상적 두 성분 복원은 가능. 불필요한 성분·오차 증가. 단일 모형 유지</td>
+<td>두 성분</td>
+</tr>
+<tr>
+<td>초기 후보의 장소 A·B 검증</td>
+<td>REW 차이 감소와 CV 악화 동시 발생. 전면 적용 보류</td>
+<td>새 자료</td>
+</tr>
+<tr>
+<td>세 박수 교차 예측·2/3 와 3/3 개선</td>
+<td>참조 차이 이득 작음. 2/3 는 장소 A CV 악화, 3/3 는 새 두 공간 기존값 유지. 미채택·이번 연구 종료</td>
+<td>최종 검증</td>
+</tr>
+<tr>
+<td>−0.03 초·일정 비율 보정</td>
+<td>두 공간의 관측 차이만으로 보편적 편향 식별 불가</td>
+<td>검토 후 넣지 않기로 확정. 별도 교정 실험 완료로 세지 않음. 확정 문서</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="a5-참조와-반증-자료의-사용">A.5 참조와 반증 자료의 사용</h2>
+<p>장소 G 최초 비교의 1/3 옥타브 자료는 1 옥타브로 재내보낸 뒤 대조했다. 동일 REW IR 감사, 동시 박수, 장소 F 는 입력·처리의 영향을 좁히는 근거로 사용했다. 과거 T20 수치를 현행 v4 정확도로 다시 명명하지 않았다.</p>
+<p>무선 원격 iPhone, MacBook 마이크, USB·장소 B 는 참조 품질과 경로에 따른 한계를 함께 남긴다. MacBook 마이크의 낮은 T20 적합은 정확도 참조 미채택 사례이며, 숫자가 더 작다는 이유로 삭제한 것이 아니다.</p>
+<p>TRACE 의 정보 보존·공통 곡선 연구는 측정 해석과 연결되지만, 합성 출력·청감·FDN 의 결과는 측정기 성능에 합산하지 않는다. 합성과 재생 도구에 관한 결과는 별도 보고서에서 다룬다.</p>
+<h2 id="a6-참조-획득-조건의-보충-기록">A.6 참조 획득 조건의 보충 기록</h2>
+<p>본문의 장소 A 표는 추가 획득한 REW2 회를 사용한다. 먼저 얻은 다른 연결 조건의 REW3 회 평균은 0.17533 초였고, 같은 여음 5 회 평균 0.21725 초와의 차이는+0.04192 초(+23.91%)였다. 본문 표의 참조는 0.18750 초이므로 차이가+15.87% 다. 두 비교가 같은 여음 5 개를 공유한다는 점을 유지하며 독립 표본으로 더하지 않는다. 전자는 무선, 후자는 USB 연결이었으나 다른 조건을 완전히 통제하지 않아 차이를 연결 방식의 인과 효과로 해석하지 않는다. 본문에서는 참조 품질·대역별 차이·반복성을 중심으로 해석한다.</p>
+<p>장소 표기는 본문과 부록에 공통으로 적용한다.</p>
+<h2 id="a7-합성-검사의-전체-오차-범위와-경계-사례">A.7 합성 검사의 전체 오차 범위와 경계 사례</h2>
+<p>본문 4.3 절의 전체 321 개 제공값에 대한 평균 절대 상대오차는 2.60%, 중앙값은 1.72%, 95 백분위는 8.02%, 최대는 40.81% 였다. 최대값은 목표 감쇠 1.2 초·명목 초기 SNR10dB·난수시드 22 의 조건에서 대표값 1.6897 초가 나온 사례다. 이는 이 합성 집합의 한 조건이며 실제 공간 전체의 최대 오차율을 측정한 값이 아니다.</p>
+<p>이 사례의 500Hz·1kHz·2kHz 대역 중앙값은 각각 2.1760 초·1.5533 초·1.3398 초였다. 세 대역 모두 두 박수의 기여가 있었지만 500Hz 와 2kHz 의 박수 간 CV 는 각각 50.04%,28.28% 로 컸다. 결과에는 반복 편차 주의가 남았다. 따라서 큰 오차를 단일 박수의 영향으로만 설명하지 않는다.</p>
+<div class="table-scroll" role="region" aria-label="표 — 가로로 스크롤할 수 있습니다" tabindex="0"><table>
+<thead>
+<tr>
+<th>합성 자료</th>
+<th style="text-align:right">제공/전체</th>
+<th style="text-align:right">평균 절대 상대오차</th>
+<th style="text-align:right">중앙값</th>
+<th style="text-align:right">95 백분위</th>
+<th style="text-align:right">최대</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개발용 단일 감쇠</td>
+<td style="text-align:right">135/135</td>
+<td style="text-align:right">2.03%</td>
+<td style="text-align:right">1.60%</td>
+<td style="text-align:right">5.33%</td>
+<td style="text-align:right">9.19%</td>
+</tr>
+<tr>
+<td>별도 회귀 단일 감쇠</td>
+<td style="text-align:right">186/210</td>
+<td style="text-align:right">3.02%</td>
+<td style="text-align:right">1.87%</td>
+<td style="text-align:right">9.05%</td>
+<td style="text-align:right">40.81%</td>
+</tr>
+<tr>
+<td>위 두 집합 전체</td>
+<td style="text-align:right">321/345</td>
+<td style="text-align:right">2.60%</td>
+<td style="text-align:right">1.72%</td>
+<td style="text-align:right">8.02%</td>
+<td style="text-align:right">40.81%</td>
+</tr>
+<tr>
+<td>6 초 조건 묶음(중복 포함)</td>
+<td style="text-align:right">64/66</td>
+<td style="text-align:right">1.99%</td>
+<td style="text-align:right">1.53%</td>
+<td style="text-align:right">4.47%</td>
+<td style="text-align:right">8.58%</td>
+</tr>
+</tbody>
+</table></div>
+<p>6 초 묶음은 전체 집합과 중복되는 조건을 포함한다. 미산출 24 조건은 오차 0 으로 넣지 않았고, 제공값 통계에서 제외했다. 본문 히스토그램과 누적분포에는 321 개 제공값을 모두 사용했다.</p>
+</article><nav class="report-end" aria-label="보고서 관련 페이지"><a href="measurement-1.0.0.html">본문으로 돌아가기</a><a href="index.html">연구 목록으로</a></nav></main><footer><div><a href="../privacy.html">개인정보처리방침</a><a href="index.html">연구</a><span>© 2026 크리티컬 리스닝 커뮤니티 · Made by Mingkoo</span></div><a href="mailto:yeoeum@anotier.art">yeoeum@anotier.art</a></footer></body></html>
