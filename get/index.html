@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YEOEUM 앱 다운로드</title>
+  <link rel="canonical" href="https://yeoeum.anotier.art/get/">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ROOM REVERBERATION · RT60</p>
+      <h1>YEOEUM</h1>
+      <p>여음 앱 다운로드 · Download YEOEUM</p>
+      <div class="links">
+        <a id="play" href="https://play.google.com/store/apps/details?id=mingkoo.yeoeum">Google Play</a>
+        <a id="apple" href="https://apps.apple.com/us/app/yeoeum/id6821816103">App Store</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const userAgent = navigator.userAgent;
+    const platform = navigator.userAgentData?.platform || navigator.platform;
+    const isAndroid = /Android/i.test(userAgent) || platform === 'Android';
+    const isIPadDesktopMode = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    const isAppleMobile = /iPhone|iPad|iPod/i.test(userAgent) || isIPadDesktopMode;
+
+    if (isAndroid) {
+      window.location.replace(document.getElementById('play').href);
+    } else if (isAppleMobile) {
+      window.location.replace(document.getElementById('apple').href);
+    }
+  </script>
+</body>
+</html>
